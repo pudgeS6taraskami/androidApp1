@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "536943851643",
+    "project_id": "sykabase",
+    "storage_bucket": "sykabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536943851643:android:1605d99bfe8cd24c51cade",
+        "android_client_info": {
+          "package_name": "com.example.testapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeC2uMixjI_8ErGmsMY9mil5R3xg2QxhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
