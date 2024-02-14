@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
     public void onClck(View view) {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
-
-
-
+    }
+    public void onClck1(View v) {
+        Intent intent = new Intent(MainActivity.this, MainActivity3.class );
+        startActivity(intent);
     }
 }
 

@@ -13,50 +13,54 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Firebase;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity2 extends AppCompatActivity {
-    private EditText usernameReg;
-    private EditText passwordReg;
-    private Button buttonR;
-    private FirebaseAuth firebaseR;
-
+public class MainActivity3 extends AppCompatActivity {
+    private Button buttonL;
+    private EditText username;
+    private EditText password;
+    private FirebaseAuth firebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
 
-        firebaseR = FirebaseAuth.getInstance();
-        usernameReg = findViewById(R.id.editTextReg);
-        passwordReg = findViewById(R.id.editTextReg1);
-        buttonR = findViewById(R.id.buttonReg);
-
-        buttonR.setOnClickListener(new View.OnClickListener() {
+        buttonL = findViewById(R.id.buttonLogin);
+        username = findViewById(R.id.editTextLogin1);
+        password = findViewById(R.id.editTextLogin);
+        firebase = FirebaseAuth.getInstance();
+        buttonL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (usernameReg.getText().toString().isEmpty() || passwordReg.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity2.this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
+                if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity3.this,"Fields cannot be empty", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    firebaseR.createUserWithEmailAndPassword(usernameReg.getText().toString(), passwordReg.getText().toString())
+                    firebase.signInWithEmailAndPassword(username.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        Intent intent =  new Intent(MainActivity2.this, MainActivity4.class);
-                                        startActivity(intent);
+                                    Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                                    startActivity(intent);
                                     }
                                     else {
-                                        Toast.makeText(MainActivity2.this, "Something  get wrong!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity3.this, "You have errors", Toast.LENGTH_SHORT);
                                     }
                                 }
                             });
-
                 }
+
             }
         });
+
+
     }
+
 
 }
