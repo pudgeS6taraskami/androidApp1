@@ -37,6 +37,7 @@ public class MainActivity3 extends AppCompatActivity {
         buttonL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FirebaseUser user = firebase.getCurrentUser();
                 if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
                     Toast.makeText(MainActivity3.this,"Fields cannot be empty", Toast.LENGTH_SHORT).show();
                 }
@@ -46,22 +47,18 @@ public class MainActivity3 extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                    Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
-                                    startActivity(intent);
+                                        if (user.isEmailVerified()) {
+                                            Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                                            startActivity(intent);
+                                        }
                                     }
                                     else {
                                         Toast.makeText(MainActivity3.this, "You have errors", Toast.LENGTH_SHORT);
                                     }
                                 }
                             });
-
                 }
-
             }
         });
-
-
     }
-
-
 }

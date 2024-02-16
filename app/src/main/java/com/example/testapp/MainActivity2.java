@@ -40,7 +40,11 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 if (usernameReg.getText().toString().isEmpty() || passwordReg.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity2.this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                if (passwordReg.length()<6 || passwordReg.length()>15) {
+                    Toast.makeText(MainActivity2.this, "Your password should be more than 6 symbols and less than 15", Toast.LENGTH_SHORT).show();
+                }
+                else {
                     firebaseR.createUserWithEmailAndPassword(usernameReg.getText().toString(), passwordReg.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
