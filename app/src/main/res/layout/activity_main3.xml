@@ -10,7 +10,7 @@
         android:id="@+id/editTextLogin1"
         android:layout_width="330dp"
         android:layout_height="50dp"
-        android:hint="Name"
+        android:hint="Email"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/editTextLogin"
         app:layout_constraintEnd_toEndOf="parent"

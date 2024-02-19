@@ -41,7 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
                 if (usernameReg.getText().toString().isEmpty() || passwordReg.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity2.this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
                 }
-                if (passwordReg.length()<6 || passwordReg.length()>15) {
+                if (passwordReg.length()<6) {
                     Toast.makeText(MainActivity2.this, "Your password should be more than 6 symbols and less than 15", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -51,7 +51,9 @@ public class MainActivity2 extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         verifyEmail();
-
+                                    }
+                                    else {
+                                        Toast.makeText(MainActivity2.this, "Check your email", Toast.LENGTH_SHORT).show();
                                     }
                                     redirectToMainActivity4();
                                 }
@@ -79,9 +81,9 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(MainActivity2.this, "На вашу электронную почту отправлено письмо для верификации", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "On your email was sent letter with verification", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity2.this, "Ошибка: Письмо не отправлено", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "Error: letter isn't delivery", Toast.LENGTH_SHORT).show();
                 }
             }
         });
