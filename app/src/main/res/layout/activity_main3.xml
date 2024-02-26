@@ -19,17 +19,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.879" />
 
-    <Button
 
+    <ImageButton
         android:id="@+id/buttonLogin"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:text="Login"
+        android:layout_width="331dp"
+        android:layout_height="54dp"
+        android:background="@drawable/image_1"
+        android:src="@drawable/image_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLogin"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.064" />
 
     <EditText
         android:id="@+id/editTextLogin"
@@ -43,6 +44,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.353" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="221dp"
+        android:layout_height="30dp"
+        android:text="Welcome  Back!"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLogin1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

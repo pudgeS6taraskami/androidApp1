@@ -20,7 +20,7 @@ public class MainActivity5 extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity5.this, MainActivity.class);
+                Intent intent = new Intent(MainActivity5.this, MainActivity6.class);
                 startActivity(intent);
                 finish();
             }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity2 extends AppCompatActivity {
     private EditText usernameReg;
     private EditText passwordReg;
-    private Button buttonR;
+    private ImageButton buttonR;
     private FirebaseAuth firebaseR;
 
 
@@ -32,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
         firebaseR = FirebaseAuth.getInstance();
         usernameReg = findViewById(R.id.editTextReg);
         passwordReg = findViewById(R.id.editTextReg1);
-        buttonR = findViewById(R.id.buttonReg);
+        buttonR = findViewById(R.id.buttonReg1);
 
 
         buttonR.setOnClickListener(new View.OnClickListener() {
